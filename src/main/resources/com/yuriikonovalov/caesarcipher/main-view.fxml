@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<ScrollPane fitToWidth="true" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.yuriikonovalov.caesarcipher.MainController">
+    <VBox alignment="CENTER">
+        <padding>
+            <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+        </padding>
+        <HBox>
+            <Label maxHeight="1.7976931348623157E308" text="Алфавіт:">
+                <HBox.margin>
+                    <Insets right="10.0" />
+                </HBox.margin>
+            </Label>
+            <ChoiceBox fx:id="alphabetChoiceBox" prefWidth="150.0" />
+            <Label maxHeight="1.7976931348623157E308" text="Ключ:">
+                <HBox.margin>
+                    <Insets left="50.0" right="10.0" />
+                </HBox.margin>
+            </Label>
+            <Spinner fx:id="keySpinner">
+                <HBox.margin>
+                    <Insets />
+                </HBox.margin>
+            </Spinner>
+        </HBox>
+        <TextArea fx:id="inputText" maxHeight="1.7976931348623157E308" minHeight="-Infinity" prefHeight="100.0" promptText="Введіть повідомлення для шифрування або розшифрування" wrapText="true">
+            <VBox.margin>
+                <Insets top="20.0" />
+            </VBox.margin>
+        </TextArea>
+        <HBox alignment="CENTER">
+            <Button fx:id="encryptButton" onAction="#onEncryptButtonClick" text="Шифрувати">
+                <HBox.margin>
+                    <Insets bottom="16.0" left="16.0" right="16.0" top="16.0" />
+                </HBox.margin>
+            </Button>
+            <Button fx:id="decryptButton" mnemonicParsing="false" onAction="#onDecryptButtonClick" text="Розшифрувати">
+                <HBox.margin>
+                    <Insets bottom="16.0" left="16.0" right="16.0" top="16.0" />
+                </HBox.margin>
+            </Button>
+        </HBox>
+        <HBox fillHeight="false">
+            <Label fx:id="resultLabel" alignment="BASELINE_LEFT" minWidth="-Infinity" text="Result:" visible="false">
+                <padding>
+                    <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                </padding>
+            </Label>
+            <Label fx:id="resultText" maxWidth="1.7976931348623157E308" wrapText="true" HBox.hgrow="ALWAYS">
+                <HBox.margin>
+                    <Insets left="20.0" right="20.0" top="5.0" />
+                </HBox.margin>
+            </Label>
+            <Button fx:id="copyButton" minWidth="-Infinity" mnemonicParsing="false" onAction="#onCopyButtonClick" text="Копіювати" />
+        </HBox>
+
+    </VBox>
+</ScrollPane>
